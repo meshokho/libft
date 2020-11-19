@@ -6,7 +6,7 @@
 /*   By: teloise <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 01:14:57 by teloise           #+#    #+#             */
-/*   Updated: 2020/11/18 02:39:30 by teloise          ###   ########.fr       */
+/*   Updated: 2020/11/18 06:22:45 by teloise          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ char			*ft_itoa(int n)
 
 	if (n == 0)
 		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	int_len = ft_int_len(n);
 	if (!(new_str = (char *)malloc(sizeof(*new_str) * int_len + 1)))
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	new_str[int_len--] = '\0';
 	if (n < 0)
 	{
